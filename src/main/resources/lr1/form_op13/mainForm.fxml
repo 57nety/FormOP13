@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Group xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lr1.form_op13.Controller">
+   <children>
+      <Pane fx:id="paneMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="840.0">
+         <children>
+            <Label focusTraversable="false" layoutX="218.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Контрольный расчёт №">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="259.0" layoutY="27.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="расхода специй и соли">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="334.0" layoutY="76.0" text="по">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbBoxOrg" focusTraversable="false" layoutX="203.0" layoutY="115.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#selectOrganization" prefHeight="31.0" prefWidth="260.0" />
+            <ComboBox fx:id="cmbBoxStructSubdiv" disable="true" focusTraversable="false" layoutX="203.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#selectStructuralSubdivision" prefHeight="31.0" prefWidth="260.0" />
+            <Label focusTraversable="false" layoutX="495.0" layoutY="7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Дата">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="606.0" layoutY="155.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Форма по ОКПО">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="540.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Вид дейтельности по ОКДП">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="16.0" layoutY="159.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Структурное подразделение">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="16.0" layoutY="121.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Организация">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label focusTraversable="false" layoutX="16.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Отчётный период">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="OKPO" editable="false" focusTraversable="false" layoutX="716.0" layoutY="155.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="110.0" />
+            <TextField fx:id="OKDP" editable="false" focusTraversable="false" layoutX="716.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="110.0" />
+            <TextField fx:id="numControlCalc" focusTraversable="false" layoutX="427.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="49.0" />
+            <DatePicker fx:id="beforeDate" editable="false" focusTraversable="false" layoutX="355.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="107.0" />
+            <DatePicker fx:id="withDate" editable="false" focusTraversable="false" layoutX="220.0" layoutY="75.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="107.0" />
+            <DatePicker fx:id="nowDate" editable="false" focusTraversable="false" layoutX="534.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="110.0" />
+            <TabPane layoutX="16.0" layoutY="207.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="810.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab closable="false" text="Контрольный расчёт расхода">
+                     <content>
+                        <Pane prefHeight="310.0" prefWidth="810.0">
+                           <children>
+                              <TableView fx:id="tblControlCalc" focusTraversable="false" layoutX="1.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="810.0">
+                                 <columns>
+                                    <TableColumn fx:id="colNumber" editable="false" prefWidth="79.0" resizable="false" text="Номер по порядку" />
+                                    <TableColumn fx:id="colName" editable="false" prefWidth="113.0" resizable="false" text="Наименование" />
+                                    <TableColumn fx:id="colCode" editable="false" prefWidth="59.0" resizable="false" text="Код" />
+                                    <TableColumn fx:id="colBalanceStart" prefWidth="140.0" resizable="false" text="Остаток на начало отчетного периода (сумма), руб. коп." />
+                                    <TableColumn fx:id="colReceive" prefWidth="127.0" resizable="false" text="Поступило за отчетный период (сумма), руб. коп." />
+                                    <TableColumn fx:id="colBalanceEnd" prefWidth="141.0" resizable="false" text="Остаток на конец отчетного периода (сумма), руб. коп." />
+                                    <TableColumn fx:id="colSpent" editable="false" prefWidth="135.0" resizable="false" text="Израсходовано за отчетный период (сумма), руб. коп." />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="nameSpice" focusTraversable="false" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="150.0" promptText="Название приправы" />
+                              <Button focusTraversable="false" layoutX="150.0" layoutY="21.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addSpiceInTable" prefHeight="25.0" prefWidth="99.0" text="Добавить">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Справка о стоимости, включенной в калькуляцию блюд">
+                     <content>
+                        <Pane prefHeight="310.0" prefWidth="810.0">
+                           <children>
+                              <Label focusTraversable="false" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Стоимость специй на блюдо">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="1.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Стоимость соли на блюдо">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="349.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="руб.">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="350.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="руб.">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="550.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="коп.">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" layoutX="550.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="коп.">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="costSaltKopeck" focusTraversable="false" layoutX="389.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0" />
+                              <TextField fx:id="costSpiceKopeck" focusTraversable="false" layoutX="389.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0" />
+                              <TextField fx:id="costSaltRuble" focusTraversable="false" layoutX="182.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0" />
+                              <TextField fx:id="costSpiceRuble" focusTraversable="false" layoutX="182.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="150.0" />
+                              <TableView fx:id="tblCostReport" focusTraversable="false" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="161.0" prefWidth="810.0">
+                                 <columns>
+                                    <TableColumn fx:id="colNameField" editable="false" prefWidth="469.0" resizable="false" />
+                                    <TableColumn fx:id="colNumberDishes" prefWidth="169.0" resizable="false" text="Количество блюд" />
+                                    <TableColumn fx:id="colSumCost" editable="false" prefWidth="169.0" resizable="false" text="Сумма (руб. коп.)" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Button focusTraversable="false" layoutX="14.0" layoutY="517.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnSign" prefHeight="25.0" prefWidth="230.0" text="Расшифровка подписей" />
+            <Button focusTraversable="false" layoutX="636.0" layoutY="517.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnCalcTables" prefHeight="25.0" prefWidth="190.0" text="Рассчитать" />
+            <Button focusTraversable="false" layoutX="635.0" layoutY="548.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnSaveDoc" prefHeight="25.0" prefWidth="85.0" text="Сохранить" />
+            <Button focusTraversable="false" layoutX="741.0" layoutY="548.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickBtnCloseDoc" prefHeight="25.0" prefWidth="85.0" text="Отмена" />
+            <Label focusTraversable="false" layoutX="203.0" layoutY="76.0" text="с">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TitledPane fx:id="paneSign" animated="false" collapsible="false" layoutX="135.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="271.0" prefWidth="563.0" text="Расшифровка подписей" visible="false">
+         <content>
+            <Pane prefHeight="267.0" prefWidth="561.0">
+               <children>
+                  <ComboBox fx:id="cmbBoxCalcAndRef" layoutX="30.0" layoutY="23.0" prefHeight="35.0" prefWidth="260.0" promptText="Расчёт и справку составил" />
+                  <ComboBox fx:id="cmbBoxApprove" layoutX="30.0" layoutY="69.0" prefHeight="35.0" prefWidth="260.0" promptText="Утвердил" />
+                  <ComboBox fx:id="cmbBoxAccountant" layoutX="30.0" layoutY="116.0" prefHeight="35.0" prefWidth="260.0" promptText="Бухгалтер" />
+                  <TextField fx:id="calcAndRefSign" layoutX="342.0" layoutY="21.0" prefHeight="31.0" prefWidth="188.0" />
+                  <TextField fx:id="approveSign" layoutX="342.0" layoutY="67.0" prefHeight="31.0" prefWidth="188.0" />
+                  <TextField fx:id="accountantSign" layoutX="342.0" layoutY="116.0" prefHeight="31.0" prefWidth="188.0" />
+                  <Button layoutX="105.0" layoutY="167.0" mnemonicParsing="false" onAction="#clickBtnSignSave" text="Сохранить">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="393.0" layoutY="167.0" mnemonicParsing="false" onAction="#clickBtnSignCancel" text="Отмена">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
+   </children>
+</Group>
